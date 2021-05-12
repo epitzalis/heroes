@@ -4,10 +4,10 @@ import {MatTableDataSource} from '@angular/material/table';
 import { ModelHeroe } from '../../models/heroe.model';
 import { HeroesApiService } from '../../core/services/heroes-api.service';
 import { UtilService } from '../../core/services/util.service';
-import { ConfirmDialogComponent } from '../shared/confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ROUTES } from '../../constants/routes';
+import { ConfirmDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-heroe-list',

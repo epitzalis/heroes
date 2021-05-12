@@ -8,7 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
-import { ConfirmationDialogModule } from '../shared/confirmation-dialog/confirmation-dialog.module';
+import { ConfirmationDialogModule } from '../confirmation-dialog/confirmation-dialog.module';
 
 
 @NgModule({
