@@ -16,6 +16,12 @@ export const routes: Routes = [
     )
   },
   {
+    path: `${ROUTES.EDIT}/:id`,
+    loadChildren: () => import('./edit/edit.module').then(
+      module => module.EditModule
+    )
+  },
+  {
     path: '',
     redirectTo: `/${ROUTES.HOME}`,
     pathMatch: 'full'

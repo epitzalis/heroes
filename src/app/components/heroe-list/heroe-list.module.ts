@@ -12,12 +12,6 @@ import { ConfirmationDialogModule } from '../confirmation-dialog/confirmation-di
 
 
 @NgModule({
-  declarations: [
-    HeroeListComponent
-  ],
-  exports: [
-    HeroeListComponent
-  ],
   imports: [
     CommonModule,
     MatTableModule,
@@ -27,7 +21,13 @@ import { ConfirmationDialogModule } from '../confirmation-dialog/confirmation-di
     MatIconModule,
     MatTooltipModule,
     ConfirmationDialogModule,
-    MatDialogModule,
+    MatDialogModule
+  ],
+  declarations: [
+    HeroeListComponent
+  ],
+  exports: [
+    HeroeListComponent
   ]
 })
 export class HeroeListModule { }

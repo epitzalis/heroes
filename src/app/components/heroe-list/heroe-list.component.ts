@@ -37,7 +37,7 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
   }
 
   onEditHeroe(heroe: ModelHeroe): void {
-    debugger;
+    this.router.navigate([`/${ROUTES.EDIT}`, heroe.id]);
   }
 
   onDeleteHeroe(heroe: ModelHeroe): void {

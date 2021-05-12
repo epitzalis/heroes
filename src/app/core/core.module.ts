@@ -6,12 +6,11 @@ import { UtilService } from './services/util.service';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
-  declarations: [],
   imports: [
-        CommonModule,
-        HttpClientModule,
-        MatSnackBarModule
-    ],
+    CommonModule,
+    HttpClientModule,
+    MatSnackBarModule,
+  ],
   providers: [
     HeroesApiService,
     UtilService

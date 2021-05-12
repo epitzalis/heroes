@@ -20,9 +20,14 @@ export class HeroesApiService {
     return this.httpClient.get<ModelHeroe[]>(url);
   }
 
-  public getHeroe(id: string): Observable<ModelHeroe[]> {
+  public getHeroe(id: string): Observable<ModelHeroe> {
     const url = `${environment.API_REST_URL}/heroes/${id}`;
-    return this.httpClient.get<ModelHeroe[]>(url);
+    return this.httpClient.get<ModelHeroe>(url);
+  }
+
+  public updateHeroe(heroe: ModelHeroe): Observable<ModelHeroe> {
+    const url = `${environment.API_REST_URL}/heroes/${heroe.id}`;
+    return this.httpClient.put<ModelHeroe>(url, heroe);
   }
 
   public getHeroesFiltered(query: string): Observable<ModelHeroe[]> {
@@ -45,6 +50,11 @@ export class HeroesApiService {
   public deleteHeroe(id: string): Observable<object> {
     const url = `${environment.API_REST_URL}/heroes/${id}`;
     return this.httpClient.delete(url);
+  }
+
+  public createHeroe(heroe: ModelHeroe): Observable<ModelHeroe> {
+    const url = `${environment.API_REST_URL}/heroes`;
+    return this.httpClient.post<ModelHeroe>(url, heroe);
   }
 
 

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateComponent } from './create.component';
-import { Routes, RouterModule } from '@angular/router';
+import { EditComponent } from './edit.component';
+import { RouterModule, Routes } from '@angular/router';
 import { HeroeFormModule } from '../../components/heroe-form/heroe-form.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: CreateComponent
+    component: EditComponent
   }
 ];
 
@@ -18,7 +18,7 @@ const routes: Routes = [
     HeroeFormModule
   ],
   declarations: [
-    CreateComponent,
-  ]
+    EditComponent
+  ],
 })
-export class CreateModule { }
+export class EditModule { }
