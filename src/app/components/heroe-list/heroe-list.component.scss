@@ -1,0 +1,31 @@
+
+.heroe-list {
+  width: 50%;
+  margin: auto;
+}
+
+@media (max-width: 800px) {
+  .heroe-list {
+    width: 90%;
+  }
+}
+
+mat-icon { 
+  cursor: pointer; 
+}
+
+.name {
+  width: 90%;
+}
+
+mat-form-field {
+  padding: 15px 15px 0 15px;
+}
+
+table {
+  padding: 5px;
+}
+
+.no-data {
+  padding: 20px;
+}

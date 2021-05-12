@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     PagesModule,
-    NoopAnimationsModule
+    CoreModule,
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

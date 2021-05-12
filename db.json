@@ -1,0 +1,29 @@
+{
+    "heroes": [
+        { "id": "43UHNNF334D1", "name": "SuperMan" },
+        { "id": "13UHYYF334D2", "name": "Ant-Man" },
+        { "id": "23UHNNF334D3", "name": "La Avispa" },
+        { "id": "33UHYYF334D4", "name": "Bruja Escarlata" },
+        { "id": "43UHNNF334D5", "name": "Capitana Marvel" },
+        { "id": "53UHYYF334D6", "name": "Deadpool" },
+        { "id": "63UHNNF334D7", "name": "Dr. Strange" },
+        { "id": "73UHYYF334D8", "name": "Pantera Negra" },
+        { "id": "83UHNNF334D9", "name": "Hulk" },
+        { "id": "93UHEEF334F1", "name": "Valquiria " },
+        { "id": "03UHNNF334F2", "name": "Visión" },
+        { "id": "41UHEEF334F3", "name": "Wolverine" },
+        { "id": "42UHNNF334F4", "name": "Spiderman" },
+        { "id": "43UHEEF334F5", "name": "Capitán América" },
+        { "id": "44UHNNF334F6", "name": "Iron Man" },
+        { "id": "45UHNNF334F7", "name": "Gamora" },
+        { "id": "46UHEEF334F8", "name": "Thor" },
+        { "id": "47UHNNF334F9", "name": "Aquaman" },
+        { "id": "48UHNNF334R2", "name": "Shazam" },
+        { "id": "49UHNNF334R3", "name": "Flash" },
+        { "id": "40UHEEF334R4", "name": "Catwoman" },
+        { "id": "435HNNF334R5", "name": "Flash" },
+        { "id": "436HEEF334R6", "name": "Linterna Verde" },
+        { "id": "437HNNF334R7", "name": "Wonder Woman" },
+        { "id": "438HEEF334R8", "name": "Batman" }
+      ]
+}
