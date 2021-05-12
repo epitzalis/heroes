@@ -7,8 +7,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { ConfirmationDialogModule } from '../shared/confirmation-dialog/confirmation-dialog.module';
 
 
 @NgModule({
@@ -25,7 +25,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ConfirmationDialogModule,
+    MatDialogModule,
   ]
 })
 export class HeroeListModule { }

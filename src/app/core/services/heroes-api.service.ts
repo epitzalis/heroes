@@ -44,7 +44,7 @@ export class HeroesApiService {
 
   public deleteHeroe(id: string): Observable<object> {
     const url = `${environment.API_REST_URL}/heroes/${id}`;
-    return this.httpClient.delete<ModelHeroe[]>(url);
+    return this.httpClient.delete(url);
   }
 
 
