@@ -3,6 +3,9 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { ModelHeroe } from '../../models/heroe.model';
 import { HeroesApiService } from '../../core/services/heroes-api.service';
+import { UtilService } from '../../core/services/util.service';
+import { ConfirmDialogComponent } from '../shared/confirmation-dialog/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-heroe-list',
@@ -21,7 +24,9 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
   }
 
   constructor(
-    private readonly heroesApiService: HeroesApiService
+    private readonly heroesApiService: HeroesApiService,
+    private readonly utilService: UtilService,
+    private readonly dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -29,11 +34,27 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
   }
 
   onEditHeroe(heroe: ModelHeroe): void {
+    
     debugger;
   }
 
   onDeleteHeroe(heroe: ModelHeroe): void {
-    debugger;
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      maxWidth: '400px',
+      data: {
+          title: '¿Estás seguro?',
+          message: 'Va a eliminar el heroe ' + heroe.name}
+    });
+
+    dialogRef.afterClosed().subscribe((dialogResult: boolean) => {
+      if (dialogResult) {
+        this.heroesApiService.deleteHeroe(heroe.id).subscribe(() => {
+          this.getHeroes();
+          this.utilService.toastSucess('Ha eliminado el heroe ' + heroe.name);
+        });
+      }
+    });
   }
 
   onSearchHeroe(query: string): void {
