@@ -1,14 +1,5 @@
 
-.heroe-list {
-  width: 50%;
-  margin: auto;
-}
 
-@media (max-width: 800px) {
-  .heroe-list {
-    width: 90%;
-  }
-}
 
 mat-icon { 
   cursor: pointer; 
@@ -28,4 +19,9 @@ table {
 
 .no-data {
   padding: 20px;
+}
+
+.btn-create-heroe {
+  margin-left: 20px;
+  margin-right: 20px;
 }

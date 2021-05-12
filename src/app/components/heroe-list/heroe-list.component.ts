@@ -6,6 +6,8 @@ import { HeroesApiService } from '../../core/services/heroes-api.service';
 import { UtilService } from '../../core/services/util.service';
 import { ConfirmDialogComponent } from '../shared/confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { ROUTES } from '../../constants/routes';
 
 @Component({
   selector: 'app-heroe-list',
@@ -26,7 +28,8 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
   constructor(
     private readonly heroesApiService: HeroesApiService,
     private readonly utilService: UtilService,
-    private readonly dialog: MatDialog
+    private readonly dialog: MatDialog,
+    private readonly router: Router
   ) { }
 
   ngOnInit(): void {
@@ -34,7 +37,6 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
   }
 
   onEditHeroe(heroe: ModelHeroe): void {
-    
     debugger;
   }
 
@@ -61,6 +63,10 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
     this.heroesApiService.getHeroesFiltered(query).subscribe((heroes: ModelHeroe[]) => {
       this.updateDataTable(heroes);
     });
+  }
+
+  onCreateHeroe(): void {
+    this.router.navigate([`/${ROUTES.CREATE}`]);
   }
 
   private getHeroes(): void {

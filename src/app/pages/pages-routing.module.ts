@@ -10,6 +10,12 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: ROUTES.CREATE,
+    loadChildren: () => import('./create/create.module').then(
+      module => module.CreateModule
+    )
+  },
+  {
     path: '',
     redirectTo: `/${ROUTES.HOME}`,
     pathMatch: 'full'

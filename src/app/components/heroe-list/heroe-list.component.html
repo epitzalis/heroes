@@ -1,13 +1,13 @@
-<div class="mat-elevation-z8 heroe-list">
+<div class="mat-elevation-z8 heroe-card">
 
-  <!-- <input type="search" matInput placeholder="Búsqueda"> -->
-
+  <button (click)="onCreateHeroe()" class="btn-create-heroe" mat-raised-button color="primary" >Crear</button>
   <mat-form-field>
     <mat-icon matPrefix>search</mat-icon>
     <input (keyup.enter)="onSearchHeroe(heroeInpSearch.value)" #heroeInpSearch matInput type="search" placeholder="Nombre héroe" class="search-input">
   </mat-form-field>
 
    <button (click)="onSearchHeroe(heroeInpSearch.value)" mat-stroked-button>Buscar</button>
+
 
 
   <div class="no-data" *ngIf="dataHeroesTable.data.length === 0">
