@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { ROUTES } from '../../constants/routes';
 import { ConfirmDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { TranslateService } from '@ngx-translate/core';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-heroe-list',
@@ -63,7 +64,7 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
   }
 
   onSearchHeroe(query: string): void {
-    this.heroesApiService.getHeroesFiltered(query).subscribe((heroes: ModelHeroe[]) => {
+    this.heroesApiService.getHeroesFiltered(query).pipe(take(1)).subscribe((heroes: ModelHeroe[]) => {
       this.updateDataTable(heroes);
     });
   }
