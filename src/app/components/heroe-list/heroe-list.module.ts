@@ -21,7 +21,7 @@ import { ConfirmationDialogModule } from '../confirmation-dialog/confirmation-di
     MatIconModule,
     MatTooltipModule,
     ConfirmationDialogModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   declarations: [
     HeroeListComponent
