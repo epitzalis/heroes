@@ -11,11 +11,11 @@ import { ROUTES } from '../../constants/routes';
 })
 export class HeroeFormComponent implements OnInit {
 
-  @Input() heroe!: ModelHeroe;
+  @Input() heroe: ModelHeroe;
   @Output() save = new EventEmitter<ModelHeroe>();
   @Output() cancel = new EventEmitter<any>();
 
-  public form!: FormGroup;
+  public form: FormGroup;
 
 
   constructor(

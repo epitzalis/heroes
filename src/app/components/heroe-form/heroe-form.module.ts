@@ -6,6 +6,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputUppercaseModule } from '../../directives/input-uppercase/input-uppercase.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 @NgModule({
@@ -16,7 +19,14 @@ import { InputUppercaseModule } from '../../directives/input-uppercase/input-upp
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    InputUppercaseModule
+    InputUppercaseModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [ HttpClient ],
+      }
+    }),
   ],
   declarations: [
     HeroeFormComponent
@@ -26,3 +36,7 @@ import { InputUppercaseModule } from '../../directives/input-uppercase/input-upp
   ]
 })
 export class HeroeFormModule { }
+
+export function httpTranslateLoader(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}

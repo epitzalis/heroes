@@ -15,9 +15,9 @@ export interface DialogData {
 
 export class ConfirmDialogComponent {
 
-    dialogData!: DialogData;
-    title!: string;
-    message!: string;
+    dialogData: DialogData;
+    title: string;
+    message: string;
 
     constructor(
         public dialogRef: MatDialogRef<ConfirmDialogComponent>,

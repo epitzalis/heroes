@@ -9,6 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ConfirmationDialogModule } from '../confirmation-dialog/confirmation-dialog.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 @NgModule({
@@ -22,6 +25,13 @@ import { ConfirmationDialogModule } from '../confirmation-dialog/confirmation-di
     MatTooltipModule,
     ConfirmationDialogModule,
     MatDialogModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [ HttpClient ],
+      }
+    }),
   ],
   declarations: [
     HeroeListComponent
@@ -31,3 +41,8 @@ import { ConfirmationDialogModule } from '../confirmation-dialog/confirmation-di
   ]
 })
 export class HeroeListModule { }
+
+export function httpTranslateLoader(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
+

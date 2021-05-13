@@ -12,7 +12,7 @@ import { ROUTES } from '../../constants/routes';
 })
 export class EditComponent implements OnInit {
 
-  heroe!: ModelHeroe;
+  heroe: ModelHeroe;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,

@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ROUTES } from '../../constants/routes';
 import { ConfirmDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-heroe-list',
@@ -19,7 +20,7 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['name', 'edit', 'delete'];
   dataHeroesTable = new MatTableDataSource<ModelHeroe>([]);
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngAfterViewInit(): void {
     this.dataHeroesTable.paginator = this.paginator;
@@ -29,7 +30,8 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
     private readonly heroesApiService: HeroesApiService,
     private readonly utilService: UtilService,
     private readonly dialog: MatDialog,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly translate: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -45,15 +47,16 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: '400px',
       data: {
-          title: '¿Estás seguro?',
-          message: 'Va a eliminar el heroe ' + heroe.name}
+          title: this.translate.instant('dialog.confirm.sure'),
+          message: this.translate.instant('dialog.confirm.eliminate_hero', {name: heroe.name})
+      }
     });
 
     dialogRef.afterClosed().subscribe((dialogResult: boolean) => {
       if (dialogResult) {
         this.heroesApiService.deleteHeroe(heroe.id).subscribe(() => {
           this.getHeroes();
-          this.utilService.toastSucess('Ha eliminado el heroe ' + heroe.name);
+          this.utilService.toastSucess(this.translate.instant('toast.eliminated_hero', {name: heroe.name}));
         });
       }
     });
@@ -79,6 +82,5 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
     this.dataHeroesTable = new MatTableDataSource<ModelHeroe>(heroes);
     this.dataHeroesTable.paginator = this.paginator;
   }
-
 
 }

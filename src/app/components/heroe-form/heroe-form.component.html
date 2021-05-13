@@ -1,15 +1,15 @@
 <div class="mat-elevation-z8 heroe-card">
     <form [formGroup]="form">
         <mat-form-field>
-            <mat-label>Nombre heroe</mat-label>
+            <mat-label>{{ "heroe_form.name" | translate }}</mat-label>
             <input appInputUppercase matInput formControlName="name" maxlength="80">
             <mat-error *ngIf="form.get('name')?.errors && form.get('name')?.touched">
-                El campo nombre es obligatorio
+                {{ "heroe_form.name_field_required" | translate }}
             </mat-error>
         </mat-form-field>
         <div class="row">
-            <button (click)="onCancel()" class="btn-cancel" mat-stroked-button color="warn" >Cancelar</button>
-            <button (click)="onSave()" mat-stroked-button color="primary" [disabled]="!form.valid">Guardar</button>
+            <button (click)="onCancel()" class="btn-cancel" mat-stroked-button color="warn" >{{ "button.cancel" | translate }}</button>
+            <button (click)="onSave()" mat-stroked-button color="primary" [disabled]="!form.valid">{{ "button.save" | translate }}</button>
         </div>
     </form>
 </div>
