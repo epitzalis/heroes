@@ -36,7 +36,7 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit(): void {
-    this.consultData();
+    this.loadTable();
   }
 
   onEditHeroe(heroe: ModelHeroe): void {
@@ -56,7 +56,7 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe((dialogResult: boolean) => {
       if (dialogResult) {
         this.heroesApiService.deleteHeroe(heroe.id).subscribe(() => {
-          this.consultData();
+          this.loadTable();
           this.utilService.toastSucess(this.translate.instant('toast.eliminated_hero', {name: heroe.name}));
         });
       }
@@ -73,7 +73,7 @@ export class HeroeListComponent implements OnInit, AfterViewInit {
     this.router.navigate([`/${ROUTES.CREATE}`]);
   }
 
-  private consultData(): void {
+  private loadTable(): void {
     this.heroesApiService.getHeroes().subscribe((heroes: ModelHeroe[]) => {
       this.updateDataTable(heroes);
     });

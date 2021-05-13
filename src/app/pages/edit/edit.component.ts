@@ -22,7 +22,7 @@ export class EditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.consultHeroe();
+    this.loadHeroe();
   }
 
   public onSave(heroe: ModelHeroe): void {
@@ -32,7 +32,7 @@ export class EditComponent implements OnInit {
     });
   }
 
-  private consultHeroe(): void {
+  private loadHeroe(): void {
     const idHeroe = this.activatedRoute.snapshot.paramMap.get('id');
     if (idHeroe) {
       this.heroesApiService.getHeroe(idHeroe).subscribe((heroe: ModelHeroe) => {
