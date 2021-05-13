@@ -1,38 +1,38 @@
 {
     "app" : {
-        "title" : "Héroes"
+        "title" : "Heroes"
     },
     "button": {
-        "cancel": "Cancelar",
-        "create": "Crear",
-        "search": "Buscar",
-        "save": "Guardar"
+        "cancel": "Cancel",
+        "create": "Create",
+        "search": "Search",
+        "save": "Save"
     },
     "dialog": {
         "confirm": {
-            "eliminate_hero": "Va a eliminar el héroe {{name}}",
-            "sure": "¿Estás seguro?"
+            "eliminate_hero": "Will eliminate the Hero {{name}}",
+            "sure": "Are you sure?"
         }
     },
     "heroe_form": {
-        "name": "Nombre héroe",
-        "name_field_required": "El campo nombre es obligatorio"
+        "name": "Hero name",
+        "name_field_required": "The name field is mandatory"
     },
     "menu": {
         "home": "Home"
     },
     "placeholder": {
-        "heroe_name": "Nombre héroe"
+        "heroe_name": "Hero name"
     },
     "table": {
-        "heroe": "Héroe",
-        "heroes_not_found": "Héroes no encontrados"
+        "heroe": "Heroe",
+        "heroes_not_found": "Heroes not found"
     },
     "toast": {
-        "eliminated_hero": "Ha eliminado el héroe {{name}}"
+        "eliminated_hero": "Has eliminated the hero {{name}}"
     },
     "tooltip": {
-        "edit_hero": "Editar héroe",
-        "remove_hero": "Eliminar héroe"
+        "edit_hero": "Edit hero",
+        "remove_hero": "Delete hero"
     }
 }
