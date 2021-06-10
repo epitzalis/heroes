@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { ModelHeroe } from '../../models/heroe.model';
 import { map } from 'rxjs/operators';
@@ -8,8 +8,6 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class HeroesApiService {
-  private readonly heroesSubject = new Subject<ModelHeroe[]>();
-  private readonly $getHeroesFiltered = this.heroesSubject.asObservable();
 
   constructor(
     private readonly httpClient: HttpClient
@@ -32,7 +30,7 @@ export class HeroesApiService {
 
   public getHeroesFiltered(query: string): Observable<ModelHeroe[]> {
     query = query.toLocaleLowerCase();
-    this.httpClient
+    return this.httpClient
       .get<ModelHeroe[]>(`${environment.API_REST_URL}/heroes`)
       .pipe(
         map((heroes: ModelHeroe[]) =>
@@ -40,11 +38,7 @@ export class HeroesApiService {
             (heroe: ModelHeroe) => heroe.name.toLocaleLowerCase().includes(query)
           )
         )
-      )
-      .subscribe((heroes: ModelHeroe[]) => {
-        this.heroesSubject.next(heroes);
-      });
-    return this.$getHeroesFiltered;
+      );
   }
 
   public deleteHeroe(id: string): Observable<object> {
