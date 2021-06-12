@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { ModelHeroe } from '../../models/heroe.model';
-import { map } from 'rxjs/operators';
 
 
 @Injectable()
@@ -34,7 +34,7 @@ export class HeroesApiService {
       .get<ModelHeroe[]>(`${environment.API_REST_URL}/heroes`)
       .pipe(
         map((heroes: ModelHeroe[]) =>
-        heroes.filter(
+          heroes.filter(
             (heroe: ModelHeroe) => heroe.name.toLocaleLowerCase().includes(query)
           )
         )
