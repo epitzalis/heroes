@@ -5,7 +5,6 @@ import { map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { ModelHeroe } from '../../models/heroe.model';
 
-
 @Injectable()
 export class HeroesApiService {
 
@@ -50,6 +49,5 @@ export class HeroesApiService {
     const url = `${environment.API_REST_URL}/heroes`;
     return this.httpClient.post<ModelHeroe>(url, heroe);
   }
-
 
 }
